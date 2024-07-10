@@ -1,0 +1,563 @@
+body {
+    font-family: "Kiwi Maru", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    background-color: #eeeeee;
+    color: #333333;
+    overflow-y: scroll;
+}
+
+header {
+    color: #ffffff;
+    background-color: #888888;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.inner {
+    max-width: 1050px;
+    padding: 80px 25px 50px;
+    margin: 0 auto;
+}
+
+footer {
+    color: #ffffff;
+    background-color: #888888;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.tocan_btn {
+    display: block;
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+}
+
+#alert {
+    border: 1px solid red;
+    color: red;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto 30px;
+}
+
+/* フォント */
+
+h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px auto 20px;
+}
+
+p.sname {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.done p, .cancel_item p, #alert {
+    font-size: 16px;
+}
+
+.done span, .uname_wrap {
+    font-size: 12px;
+}
+
+footer {
+    font-size: 10px;
+}
+
+/* 各種ボタン（大型） */
+/* insert update(更新)*/
+.submit_btn {
+    color: #ffffff;
+    background-color: #888888;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 170px;
+    height: 40px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* insert_proc update_proc delete*/
+.back_btn {
+    color: #ffffff;
+    background-color: #888888;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 30px auto 0;
+    display: block;
+}
+
+/* update(削除・戻る) */
+.delete_btn, .back_btn2 {
+    color: #ffffff;
+    background-color: #cccccc;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 75px;
+    height: 40px;
+    display: block;
+}
+
+/* display(絞り込みエリア) */
+.search_open_btn {
+    color: #ffffff;
+    background-color: #cccccc;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    margin: 0 auto 20px;
+    cursor: pointer;
+}
+
+.search_submit_btn {
+    color: #ffffff;
+    background-color: #333333;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    display: inline-block;
+}
+
+.search_clear_btn {
+    color: #ffffff;
+    background-color: #cccccc;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    display: inline-block;
+}
+
+/* login */
+.tologreg_btn{
+    color: #888888;
+    background-color: #cccccc;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    margin: 30px auto 0;
+    width: 170px;
+    height: 40px;
+}
+
+/* cancel */
+
+.back_btn3{
+    color: #888888;
+    background-color: #cccccc;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    margin: 50px auto 0;
+    width: 170px;
+    height: 40px;
+}
+
+/* hover */
+.submit_btn:hover, .back_btn:hover, .delete_btn:hover, .back_btn2:hover,
+.tologreg_btn:hover, .back_btn3:hover,
+.search_submit_btn:hover, .search_clear_btn:hover, .search_open_btn:hover {
+    background-color: #333333;
+    color: #fdcb6e;
+}
+
+/* 入力エリア（共通） */
+.inputarea {
+    border: 1px solid #2d3436;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 300px;
+    height: 40px;
+    padding: 0 10px;
+}
+
+select.inputarea {
+    appearance: auto;
+}
+
+.input_form {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.input_item {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+/* 入力エリア（個別） */
+.add_btn {
+    background-color: #333333;
+    color: #ffffff;
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    z-index: 20;
+}
+
+.add_btn:hover {
+    color: #fdcb6e;
+}
+
+.insert_wrap {
+    display: none;
+    padding-bottom: 40px;
+}
+
+/* ユーザ情報＆ログアウトボタン */
+.logreg_wrap {
+    height: calc(100vh - 160px);
+}
+
+.uname_wrap {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    z-index: 20;
+}
+
+#uname_disp{
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logout {
+    background-color: #ffffff;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    display: none;
+    font-weight: 500;
+}
+
+#logout:hover {
+    background-color: #333333;
+    color: #fdcb6e;
+}
+
+/* 表示エリア */
+/* 絞り込み機能 */
+.search_wrap {
+    margin: 20px auto 30px;
+    display: none;
+    width: fit-content;
+}
+
+.search_item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#searchname {
+    margin-bottom: 15px;
+}
+
+.search_colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_btn_wrap {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+/* 共通面 */
+.item_wrap {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: #888888;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 320px;
+    height: 230px;
+    color: #ffffff;
+}
+
+.sname {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+}
+
+/* 表面 */
+img.ogpImg{
+    object-fit: contain;
+    /* width: 280px; */
+    height: 147px;
+    background-image: url(../img/noimage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* 裏面 */
+.details {
+    display: none;
+}
+
+.details p, .details2 p {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.details span, .details2 span{
+    color: #333333;
+    background-color: #eeeeee;
+    padding: 5px;
+    margin-right: 8px;
+    display: inline-block;
+    width: 57px;
+    font-size: 11px;
+}
+
+.details_btn_wrap {
+    display: flex;
+    column-gap: 10px;
+    margin: 10px auto 0;
+    align-items: center;
+}
+
+.open_btn{
+    display: block;
+    width: 170px;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.edit_btn {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+    border: 1px solid #eeeeee;
+}
+
+.open_btn:hover, .edit_btn:hover {
+    background-color: #fdcb6e;
+    color: #333333;
+    border: none;
+}
+
+/* 編集画面 */
+.db_unchecked + label span.color {
+    opacity: 0.6;
+}
+
+.other_btn_wrap {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+
+/* 完了画面 */
+.done_wrap{
+    height: calc(100vh - 160px);
+}
+
+.done {
+    border-radius: 10px;
+    padding: 20px 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    color: #ffffff;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.done span{
+    color: #333333;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
+    display: inline-block;
+    width: 100px;
+}
+
+/* form色選択（デフォルト値があるのでCSSの位置はここ） */
+input[type="radio"] {
+    display: none;
+}
+
+.pink {
+    background-color: #ff7675;
+}
+
+.yellow {
+    background-color: #ff9f43;
+}
+
+.green {
+    background-color: #00b894;
+}
+
+.blue {
+    background-color: #0984e3;
+}
+
+.purple {
+    background-color: #7158e2;
+}
+
+.gray {
+    background-color: #636e72;
+}
+
+.color {
+    border-radius: 5px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.colors {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+/* 退会画面 */
+.cancel_wrap {
+    height: calc(100vh - 160px);
+}
+
+.cancel_item {
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+
+/* --------------------
+    for SP size 
+-------------------- */
+@media screen and (max-width: 768px){
+
+    .inner {
+        padding: 80px 25px 30px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .done p, form, .search_open_btn, #alert {
+        font-size: 14px;
+    }
+
+    .done span, .uname_wrap  {
+        font-size: 11px;
+    }
+
+    .add_btn {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 12px;
+    }
+
+    .input_item {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 5px;
+        padding: 5px 0;
+    }
+
+    .submit_btn {
+        margin: 20px auto 10px;
+    }
+
+    .search_wrap {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .search_submit_btn, .search_clear_btn {
+        height: 40px;
+        width: 100px;
+    }
+
+    .done {
+        padding: 15px;
+        row-gap: 15px;
+    }
+    
+    .done span {
+        width: 80px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .logreg_wrap, .cancel_wrap, .done_wrap {
+        height: calc(100vh - 140px);
+    }
+
+    .uname_wrap {
+        left: 10px;
+        top: 14px;
+    }
+    
+    #uname_disp{
+        height: 24px;
+        padding: 5px;
+    }
+
+}
