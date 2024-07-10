@@ -11,12 +11,12 @@
 - XSS対策と必須の入力項目の未入力エラーは一通り設定しました
 
 ## ③DEMO
-- https://chisaxworks.sakura.ne.jp/gs_kadai10_php4/main.php
+- https://chisaxworks.sakura.ne.jp/gs_kadai10_php4/
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
 - ユーザ１
   - ログインメールアドレス: chisaxworks@gmail.com
-  - ログインパスワード: test
+  - ログインパスワード: 準備予定
   - 画面表示名：倉本 知左子
 - ユーザ２
   - ログインメールアドレス: hana.y@gmail.com ※存在するかもですが架空として利用
