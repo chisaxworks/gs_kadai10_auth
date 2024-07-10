@@ -23,13 +23,13 @@ if(!isset($_SESSION["userid"])){
     // エラーハンドリング
     if($status === false){
     sql_error($stmt);
-    }
 
-    // 格納！
-    $val = $stmt->fetch();
-    $_SESSION["userid"] = $val["id"];
+    } else {
+        // 格納！
+        $val = $stmt->fetch();
+        $_SESSION["userid"] = $val["id"];
+    }
 }
-echo $_SESSION["userid"];
 
 ?>
 
