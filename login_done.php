@@ -14,7 +14,7 @@ require_once('funcs.php');
 $pdo = db_conn();
 
 // データ取得SQL（ユーザテーブル）
-$stmt = $pdo->prepare('SELECT * FROM gs_cm_user WHERE usermail = :usermail');
+$stmt = $pdo->prepare('SELECT * FROM gs_cm_user WHERE usermail = :usermail AND life_flg = 1');
 $stmt->bindValue(':usermail', $usermail, PDO::PARAM_STR);
 $status = $stmt->execute();
 
@@ -33,7 +33,7 @@ if(!$val){
 
 }else if($val["life_flg"] == 0){
     // life_flgが0のユーザはログインできない
-    $_SESSION["error_msg"] = "ユーザ情報がありません";
+    $_SESSION["error_msg"] = "有効なユーザ情報がありません";
     header('Location: index.php');
 
 }else{

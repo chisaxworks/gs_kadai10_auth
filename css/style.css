@@ -40,7 +40,7 @@ footer {
     bottom: 0px;
 }
 
-#alert {
+.alert {
     border: 1px solid red;
     color: red;
     padding: 10px 20px;

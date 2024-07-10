@@ -8,7 +8,7 @@ require_once('funcs.php');
 
 // SESSIONにエラー情報があったら表示する
 if(isset($_SESSION["error_msg"])){
-    $alert = '<div id="alert">' . $_SESSION['error_msg'] . '</div>';
+    $alert = '<div class="alert">' . $_SESSION['error_msg'] . '</div>';
     // echo '<script>alert("'. $alert .'");</script>';
     unset($_SESSION['error_msg']); // メッセージを表示した後にセッション変数をクリア
 }

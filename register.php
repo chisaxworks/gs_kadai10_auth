@@ -1,8 +1,25 @@
 <!-- ユーザ登録FORM -->
+<?php
+// SESSIONスタート
+session_start();
+
+// SESSIONにエラー情報があったら表示する
+if(isset($_SESSION["error_msg"])){
+    $alert = '<div class="alert">' . $_SESSION['error_msg'] . '</div>';
+    unset($_SESSION['error_msg']); // メッセージを表示した後にセッション変数をクリア
+}
+
+// 関数ファイル呼び出し
+require_once('funcs.php');
+// ログアウト処理
+sslogout();
+
+?>
 <?php include("head_logout.php");?>
 
 <!-- ユーザ画面 -->
 <div class="logreg_wrap">
+    <?= $alert ?>
     <h2>ユーザ登録画面</h2>
     <form action="register_done.php" method="post" class="input_form">
         <div class="input_item">
