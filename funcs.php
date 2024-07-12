@@ -58,29 +58,40 @@ function sql_error($stmt){
 // OGPを取得する関数を切り出す
 function getOgpImg($url, $cache) {
 
-    // URLからHTMLを取得
-    $html = file_get_contents($url);
-    if ($html === false) {
-        throw new Exception('Error fetching the URL');
-    }
-
-    // DOMDocumentを使用してHTMLを解析
-    $doc = new DOMDocument();
-    @$doc->loadHTML($html);
-    
-    $metaTags = $doc->getElementsByTagName('meta');
-    $ogpImg = '';
-    foreach ($metaTags as $meta) {
-        if ($meta->getAttribute('property') == 'og:image') {
-            $ogpImg = $meta->getAttribute('content');
-            break;
+    try {
+        // cURLを使用してURLからHTMLを取得
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $html = curl_exec($ch);
+        if (curl_errno($ch)) {
+            throw new Exception('Error fetching the URL: ' . curl_error($ch));
         }
+        curl_close($ch);
+
+        // DOMDocumentを使用してHTMLを解析
+        $doc = new DOMDocument();
+        @$doc->loadHTML($html);
+        
+        $metaTags = $doc->getElementsByTagName('meta');
+        $ogpImg = '';
+        foreach ($metaTags as $meta) {
+            if ($meta->getAttribute('property') == 'og:image') {
+                $ogpImg = $meta->getAttribute('content');
+                break;
+            }
+        }
+
+        // キャッシュに保存
+        $cache[$url] = $ogpImg;
+        
+        return $ogpImg;
+    }catch (Exception $e){
+        // エラーメッセージをログに記録
+        error_log('Error in getOgpImg: ' . $e->getMessage());
+        return ''; // エラー時はエラー文字列を返す
     }
 
-    // キャッシュに保存
-    $cache[$url] = $ogpImg;
-    
-    return $ogpImg;
-}
+    }
 
 ?>
